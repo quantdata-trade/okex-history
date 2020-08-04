@@ -4,7 +4,7 @@ OKEX官方有提供完整的SDK，方便经验不是很丰富的开发者调用
 这里以获取交割合约BTCUSD数据为例
 
 1、合约ID会随着交易而变化，首先要解决合约ID问题
-<
+```
 import requests
 import re
  
@@ -21,9 +21,9 @@ def get_okex_instrument_id(symbol, cycle):
         if symbol in instrument_id and cycle in instrument_id:
             instrument_id = instrument_id.split('"')[3]
             return instrument_id
->
+```
 2、使用SDK获取K线
-
+```
 import okex.futures_api as future
 import pandas as pd
  
@@ -53,6 +53,7 @@ if __name__ == '__main__':
     fetureAPI = future.FutureAPI(apiKey, secret, password, True)
     df = get_okex_candle_data(fetureAPI, instrument_id, k_time)
     print(df)
+```
 
 3、注意
 
