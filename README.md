@@ -1,8 +1,10 @@
-OKEX官方有提供完整的SDK，方便经验不是很丰富的开发者调用，项目地址是：https://github.com/okex/V3-Open-API-SDK
+OKEX官方有提供完整的SDK，方便经验不是很丰富的开发者调用
+项目地址是：https://github.com/okex/V3-Open-API-SDK
 
 这里以获取交割合约BTCUSD数据为例
 
 1、合约ID会随着交易而变化，首先要解决合约ID问题
+<
 import requests
 import re
  
@@ -19,7 +21,7 @@ def get_okex_instrument_id(symbol, cycle):
         if symbol in instrument_id and cycle in instrument_id:
             instrument_id = instrument_id.split('"')[3]
             return instrument_id
-
+>
 2、使用SDK获取K线
 
 import okex.futures_api as future
